@@ -18,12 +18,14 @@ uv add ss-utils-logging
 
 ## Quick Start
 
+```bash
+# [one-time] Generate example configuration files in `config/` folder
+# This creates example YAML configuration files (logging.yaml and logging.prod.yaml) that you can customize for your needs.
+uv run ss-utils-logging config --no-overwrite
+```
+
 ```python
 from ss_utils_logging import configure_logging, get_logger, generate_config_files
-
-# [one-time] Generate example configuration files in `config/` folder
-# This creates example YAML configuration files that you can customize for your needs.
-generate_config_files("config")
 
 # Configure logging with YAML file
 configure_logging("config/logging.yaml")

@@ -13,7 +13,9 @@ app = typer.Typer()
 @app.command()
 def main(
     config_dir: Annotated[Path, typer.Argument(help="The directory to generate logging configuration files in")],
-    overwrite: bool = False,
+    overwrite: Annotated[
+        bool, typer.Option(help="Overwrite existing files (logging.yaml and logging.prod.yaml) if they exist")
+    ] = False,
 ):
     """
     Generate logging configuration files.
