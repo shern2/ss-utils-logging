@@ -26,7 +26,14 @@ handlers:
     level: INFO
 
 loggers:
-  # Suppress noisy external libraries
+  gunicorn.error:
+    level: INFO
+    propagate: true
+
+  gunicorn.access:
+    level: WARNING
+    propagate: true
+
   uvicorn.access:
     level: WARNING
     propagate: false

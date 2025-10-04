@@ -14,6 +14,14 @@ handlers:
 
 loggers:
   # Production: More aggressive suppression of external libraries
+  gunicorn.error:
+    level: INFO
+    propagate: true
+
+  gunicorn.access:
+    level: WARNING
+    propagate: true
+
   uvicorn.access:
     level: ERROR
     propagate: false

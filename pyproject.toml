@@ -1,6 +1,6 @@
 [project]
 name = "ss-utils-logging"
-version = "0.0.7"
+version = "0.0.8"
 description = "Utilities for logging with orjson serialization and advanced features"
 requires-python = ">=3.10"
 authors = [{ name = "shern" }]
