@@ -1,6 +1,6 @@
 [project]
 name = "ss-utils-logging"
-version = "0.0.8"
+version = "0.0.9"
 description = "Utilities for logging with orjson serialization and advanced features"
 requires-python = ">=3.10"
 authors = [{ name = "shern" }]
@@ -22,8 +22,11 @@ Issues = "https://github.com/shern2/ss-utils-logging/issues"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.hatch.build]
+sources = ["src"]
+
 [tool.hatch.build.targets.wheel]
-packages = ["src/ss_utils_logging"]
+packages = ["ss_utils_logging"]
 
 [project.scripts]
 ss-utils-logging = "ss_utils_logging.cli:app"
