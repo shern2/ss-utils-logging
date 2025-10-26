@@ -26,18 +26,54 @@ handlers:
     level: INFO
 
 loggers:
-  gunicorn.error:
+  # Application loggers
+  main:
     level: INFO
 
+  # Gunicorn/Uvicorn loggers
   gunicorn.access:
-    level: WARNING
+    level: INFO
+    handlers: [console]
+    propagate: true
+
+  gunicorn.error:
+    level: INFO
+    handlers: [console]
+    propagate: true
 
   uvicorn.access:
-    level: WARNING
+    level: INFO
+    handlers: [console]
+    propagate: true
 
   uvicorn.error:
     level: INFO
+    handlers: [console]
+    propagate: true
 
+  # ML/AI libraries
+  optimum:
+    level: WARNING
+
+  torch:
+    level: WARNING
+
+  transformers:
+    level: WARNING
+
+  # Async/WebSocket libraries
+  asyncio:
+    level: WARNING
+
+  websockets:
+    level: WARNING
+
+
+  # Other libraries
+  concurrent.futures:
+    level: WARNING
+
+  # HTTP libraries
   httpx:
     level: WARNING
 

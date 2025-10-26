@@ -14,32 +14,61 @@ handlers:
 
 loggers:
   # Production: More aggressive suppression of external libraries
-  gunicorn.error:
+  # Application loggers
+  main:
     level: INFO
 
+  # Gunicorn/Uvicorn loggers
   gunicorn.access:
     level: WARNING
+    handlers: [console]
+    propagate: true
+
+  gunicorn.error:
+    level: WARNING
+    handlers: [console]
+    propagate: true
 
   uvicorn.access:
-    level: ERROR
+    level: WARNING
+    handlers: [console]
+    propagate: true
 
   uvicorn.error:
     level: WARNING
+    handlers: [console]
+    propagate: true
 
-  httpx:
-    level: ERROR
-
-  httpcore:
-    level: ERROR
-
-  urllib3.connectionpool:
-    level: ERROR
-
-  # Suppress other common noisy libraries
-  boto3:
+  # ML/AI libraries
+  optimum:
     level: WARNING
 
-  botocore:
+  torch:
+    level: WARNING
+
+  transformers:
+    level: WARNING
+
+  # Async/WebSocket libraries
+  asyncio:
+    level: WARNING
+
+  websockets:
+    level: WARNING
+
+
+  # Other libraries
+  concurrent.futures:
+    level: WARNING
+
+  # HTTP libraries
+  httpx:
+    level: WARNING
+
+  httpcore:
+    level: WARNING
+
+  urllib3.connectionpool:
     level: WARNING
 
 root:
