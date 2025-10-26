@@ -962,7 +962,7 @@ wheels = [
 
 [[package]]
 name = "ss-utils-logging"
-version = "0.0.8"
+version = "0.0.10"
 source = { editable = "." }
 dependencies = [
     { name = "orjson" },
